@@ -184,6 +184,10 @@ class CanonicalExperimentTest(unittest.TestCase):
                     "src/emuflow/canonical_experiment.py::_python_interpreter",
                     node["implementation"]["components"],
                 )
+                self.assertIn(
+                    "src/emuflow/packed_netlist.py",
+                    node["implementation"]["components"],
+                )
                 self.assertEqual(
                     node["inputs"]["tool.openparf_python"],
                     hashlib.sha256(interpreter.read_bytes()).hexdigest(),
